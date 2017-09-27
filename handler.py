@@ -43,7 +43,7 @@ class GraderHandler(GraderRequester):
 
     def switch_course(self, course_name):
         if not course_name in self.course_dic:
-            return False
+            return 
         headers = {'Referer': self.CHANGE_COURSE_URL,}
         files = {'active_course': (None, str(self.course_dic[course_name])), 'submit': (None, 'Next'),}
         result = self.post(self.GRADER_INDEX_URL, files=files, headers=headers)
